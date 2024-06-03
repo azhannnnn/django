@@ -1,0 +1,26 @@
+<center>
+    <table border="1" cellspacing="3" cellpadding="8" width="50%">
+        <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Contact</th>
+        <th>City</th>
+        <th>edit</th>
+        <th>delete</th>
+        
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.Fname}}</td>
+            <td>{{i.Lname}}</td>
+            <td>{{i.Email}}</td>
+            <td>{{i.Contact}}</td>
+            <td><a href="{% url 'editpage' pk=i.id %}">edit</a></td>
+            <td><a href="{% url 'deletepage' pk=i.id %}">delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'home' %}">insert more data</a>
+</center>

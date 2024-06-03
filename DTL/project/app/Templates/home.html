@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Welcome to home page</h1>
+        <h3>My Name is : {{nm}}</h3>
+        <h3>My Qualification is : {{quali}}</h3>
+        <h3>My City is : {{ct}}</h3>
+        <h3>My City is : {{dt}}</h3>
+
+    <!-- -------------------------filters-------------------- -->
+    
+        <h1>Welcome to home page</h1>
+        <h3>My Name is (in upper case) : {{ nm | upper }}</h3>
+        <h3>My Qualification is (in lower case) : {{quali|lower}}</h3>
+        
+        <h3>My slice filter is : {{nm|slice:'3'}}</h3>
+        <h3>My slice[1:4] filter is : {{nm|slice:'1:4'}}</h3>
+        <h3>My slice[::-1] filter is : {{nm|slice:'::-1'}}</h3>
+
+        <h3>My slice filter is : {{nm | slice:'3'|upper}}</h3>
+        <h3>My slice[1:4] filter is : {{nm|slice:'1:4'|capfirst}}</h3>
+        <h3>My slice[::-1] filter is : {{nm|slice:'::-1'|capfirst}}</h3>
+        
+        <!-- truncatechars filter gives 1 less charactor -->
+        <h3>My truncatechars filter is : {{dt|truncatechars:20}}</h3> 
+        <!-- truncatewords filter gives exact words -->
+        <h3>My truncatewords filter is : {{dt|truncatewords:5}}</h3> 
+        
+        <h3>My capfirst filter is : {{cap|capfirst}}</h3>
+
+        <h3>My default filter is : {{cap|default:'Welcome to unlogin page'}}</h3>
+        
+        <h3>My City is : {{dt|length}}</h3>
+
+        
+
+    </center>
+
+</body>
+</html>

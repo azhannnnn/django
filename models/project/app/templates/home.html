@@ -1,0 +1,15 @@
+<center>
+  <h3>Add New Aadhar</h3>
+  <form action="{% url 'add' %}" method="post">
+    {% csrf_token %} {{form}}
+    <button type="submit">Add</button>
+    {{msg}}
+  </form>
+
+  <h3>Add New Person Details</h3>
+  <form action="{% url 'allot' %}" method="post">
+    {% csrf_token %} {{form1}}
+    <button type="submit">Add Person details</button>
+    {{msg2}}
+  </form>
+</center>

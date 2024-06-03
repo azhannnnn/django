@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+
+  <body style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url({% static 'img1.jpg' %})" id="back">
+    <nav id="nav-bar">
+      <div id="logo">AzhanKhan</div>
+
+      <div id="links">
+        <ul>
+          <li><a class="hoa" href="{% url 'about' %}">About</a></li>
+          <li><a class="hoa" href="{% url 'contact' %}">Contact</a></li>
+          <li><a class="hoa" href="{% url 'project' %}">Project</a></li>
+          <li><a class="hoa" href="{% url 'social' %}">Social</a></li>
+          <li><a class="log" href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    {% block content2 %} {% endblock content2 %}
+
+    <footer id="foot-bar">
+      <center><div>Made with Love</div></center>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center>
+      <h1>Data Sheet</h1>
+      <table border="10" cellspacing="3" cellpadding="8" width="80%">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Contact</th>
+          <th>Course</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+        {% for data in users %}
+        <tr>
+          <td>{{data.id}}</td>
+          <td>{{data.Name}}</td>
+          <td>{{data.Email}}</td>
+          <td>{{data.Contact}}</td>
+          <td>{{data.Course}}</td>
+          <td><a href="{% url 'edit' pk=data.id %}">Update</a></td>
+          <td><a href="{% url 'delete' pk=data.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+      </table>
+      <br /><br /><br /><br /><br />
+      <a href="{% url 'home' %}">Insert Page</a>
+    </center>
+  </body>
+</html>

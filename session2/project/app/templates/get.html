@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Get Session from server..................</h1>
+    <h1>Welcome {{name}}</h1>
+
+       <h4>We found data from Session from server : {{data.name}}{{name}}</h4>
+       <h4>We found session_age from Session from server : {{data.session_age}}</h4>
+       <h4>We found expiry_age from Session from server : {{data.expiry_age}}</h4>
+       <h4>We found expiry_date from Session from server : {{data.expiry_date}}</h4>
+       <h4>expire_at_browser_close: {{data.expire_at_browser_close}} </h4>
+
+       {% comment %} {% for key in request.session.keys %}
+            {{key}}
+       {% endfor %}  {% endcomment %}
+
+       {% for key in keys %}
+        {{key}}
+       {% endfor %}
+</body>
+</html>

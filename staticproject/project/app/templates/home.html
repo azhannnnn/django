@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    
+</head>
+
+<body>
+    <nav id="nav-bar">
+        <div id="logo">AzhanKhan</div>
+
+        <div id="links">
+            <ul>
+                <li><a class="hoa" href="{% url 'loginpage' %}">Login</a></li>
+                <li><a class="hoa" href="{% url 'registerpage' %}">Signup</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+
+    <center>
+        <h1>{{name}}</h1>
+        <h1>{{email}}</h1>
+        <h1>{{password}}</h1>
+    </center>
+</body>
+</html>

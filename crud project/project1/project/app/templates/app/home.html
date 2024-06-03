@@ -1,0 +1,74 @@
+<center>
+  <h1>Home Page</h1>
+  Firstname : {{key.fname}}
+  <br />
+  Lastname : {{key.lname}}
+  <br />
+  Email : {{key.email}}
+  <br />
+  Contact : {{key.contact}}
+  <br />
+  Password : {{key.password}}
+
+  <br /><br /><br /><br /><br />
+
+  <h1>Query Form</h1>
+  {% if key2 %}
+  <form action="{% url 'update' pk=key2.id %}" method="post">
+    {% csrf_token %}
+
+    <input
+      type="email"
+      name="email"
+      readonly
+      value="{{key2.email}}"
+      placeholder="Email"
+      required
+    />
+
+    <input type="text" name="query" value="{{key2.query}}" placeholder="query" required="" />
+
+    <input type="submit" value="Update" />
+  </form>
+
+  {% else %}
+  <form action="{% url 'queryinsert' %}" method="post">
+    {% csrf_token %}
+
+    <input
+      type="email"
+      name="email"
+      readonly
+      value="{{key.email}}"
+      placeholder="Email"
+      required
+    />
+
+    <input type="text" name="query" placeholder="query" required="" />
+
+    <input type="submit" value="Insert" />
+  </form>
+  {% endif %}
+
+  <a href="{% url 'queryshow' pk=key.email %}">Show all query</a> <br />
+  {% if data %}
+  <table border cellspacing="3" cellpadding="5" width="50%">
+    <tr><th>Id</th>
+      <th>Email</th>
+      <th>Query</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td>{{i.id}}</td>
+      <td>{{i.Email}}</td>
+      <td>{{i.Query}}</td>
+      <th><a href="{% url 'edit' pk=i.id %}">Edit</a></th>
+      <th><a href="{% url 'delete' pk=i.id %}">Delete</a></th>
+
+    </tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+</center>
